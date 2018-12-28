@@ -11,9 +11,9 @@ public class FollowCam : MonoBehaviour
     public Vector3 velocity = Vector3.one;
 
 
-    private void Awake()
+    private void start()
     {
-
+       
     }
 
     private void LateUpdate()
