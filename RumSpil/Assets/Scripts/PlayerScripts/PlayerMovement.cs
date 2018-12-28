@@ -35,12 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Thrust()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            if (Input.GetAxis("Vertical") > 0)
-            {
-                transform.position += transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical");
-            }
-        }
+        transform.position += transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical");
     }
+   
+                       
 }
