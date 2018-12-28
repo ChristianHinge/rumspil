@@ -72,11 +72,15 @@ public class Rocks : MonoBehaviour
             {
                 for (int z = 0; z<numCells; z++)
                 {
-                    GameObject rockObject = Instantiate(rock, fieldParent);
+                    GameObject rockObject = Instantiate(rock, Vector3.zero,Random.rotation, fieldParent);
                     Vector3 position = new Vector3(Random.Range(0,cellSize),Random.Range(0,cellSize),Random.Range(0,cellSize));
                     rockObject.transform.localPosition = Vector3.right*x*cellSize+Vector3.up*y*cellSize+Vector3.forward*z*cellSize + position;
-                    rockObject.name = "Rock";
-                    rockObject.transform.localScale*=Random.Range(1,100);
+                    rockObject.name = "Rock"; 
+                    rockObject.transform.localScale = Vector3.up*Random.Range(0.03f,0.3f) + Vector3.right*Random.Range(0.03f,0.3f) + Vector3.forward*Random.Range(0.03f,0.3f);
+                    if (Random.Range(0f,10f) > 9.5f)
+                        rockObject.transform.localScale*=20;
+                    else if (Random.Range(0f,10f) > 9f)
+                        rockObject.transform.localScale*=5;
                     grid[x,y,z] = numRocks;
                     numRocks++;
                 }
