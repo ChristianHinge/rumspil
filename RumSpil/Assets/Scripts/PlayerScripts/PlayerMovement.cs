@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
     
     void Turn()
     {
-        float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");//("Mouse X") 
-        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis("Pitch"); //("Mouse Y") kan bruges hvis musen skal styre rotation
+        float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");   
+        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis("Pitch"); 
         float roll = rollSpeed * Time.deltaTime * Input.GetAxis("Roll");
         transform.Rotate(-pitch,yaw,-roll);
                 
