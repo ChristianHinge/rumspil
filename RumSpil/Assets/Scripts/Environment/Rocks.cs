@@ -96,7 +96,7 @@ public class Rocks : MonoBehaviour
         for (int i = activeFields.Count - 1; i >= 0; i--)
         {
             Vector3 distance = activeFields[i].transform.position+Vector3.one*chunkSize/2 - currentPos;
-            if (Mathf.Abs(distance.x)>chunkSize*5 || Mathf.Abs(distance.y)>chunkSize*5 || Mathf.Abs(distance.z)>chunkSize*5)
+            if (Mathf.Abs(distance.x)>chunkSize*2 || Mathf.Abs(distance.y)>chunkSize*2 || Mathf.Abs(distance.z)>chunkSize*2)
             {
 
                 IntVector3 arrayPos = GetArrayCoordinate(activeFields[i].transform.position);
@@ -109,11 +109,11 @@ public class Rocks : MonoBehaviour
 
         }
 
-        for (int x = -2; x <= 2; x++)
+        for (int x = -1; x <= 1; x++)
         {
-            for (int y = -2; y <= 2; y++)
+            for (int y = -1; y <= 1; y++)
             {
-                for (int z = -2; z <= 2; z++)
+                for (int z = -1; z <= 1; z++)
                 {
                     TestLocation = currentPos + new Vector3(x*chunkSize,y*chunkSize,z*chunkSize);
                     if (FieldInArea(TestLocation))

@@ -59,6 +59,6 @@ MonoBehaviour:
   boundary: {fileID: 972166345194049453, guid: c753b2b4c61bf6e47bb98a8444f02491, type: 3}
   empty: {fileID: 8158330268171545615, guid: 4f2349ee446e93f4e97cf88d43fcc477, type: 3}
   rock: {fileID: 0}
-  radius: 800
-  desiredChunkSize: 2000
+  radius: 1200
+  desiredChunkSize: 10000
   activeFields: []
