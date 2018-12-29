@@ -61,4 +61,4 @@ MonoBehaviour:
   rock: {fileID: 0}
   radius: 1200
   desiredChunkSize: 10000
-  activeFields: []
+  activeChunks: []
