@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private int upDown = 1;
     private int leftRight = 1;
+    private Laser laser;
     [SerializeField] bool randomEvents = true;
     [SerializeField] float baseSpeed;
     float speed
@@ -49,10 +50,12 @@ public class EnemyMovement : MonoBehaviour
     Vector3 difference;
     void Awake()
     {
+        laser = GetComponentInChildren<Laser>();
         targetPlayer = FindObjectOfType<PlayerInput>().transform;
         noise = new Vector3(Random.Range(0f,1f),Random.Range(0f,1f),Random.Range(0f,1f));
         upDown = Random.Range(0,2)*2-1;
         leftRight = Random.Range(0,2)*2-1;
+
     }
     void Start()
     {
@@ -61,7 +64,8 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextRandomEvent)
+        
+        if (Time.time > nextRandomEvent && randomEvents) 
         {
             if (!event1)
             {
@@ -80,6 +84,7 @@ public class EnemyMovement : MonoBehaviour
         }
         Move();
     }
+
     void Move(){
         Vector3 up = transform.position+upDown*transform.up*40;
         Vector3 down = transform.position-upDown*transform.up*40;

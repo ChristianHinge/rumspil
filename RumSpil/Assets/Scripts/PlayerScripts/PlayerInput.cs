@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] Laser[] laser;
-
+    
     private void Update()
     {        
         if(Input.GetKey(KeyCode.Space))

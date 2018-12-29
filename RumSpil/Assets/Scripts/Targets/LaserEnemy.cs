@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
-public class Laser : MonoBehaviour
+public class LaserEnemy : MonoBehaviour
 {
     LineRenderer lr;
     bool canFire = false;
     [SerializeField] float LaserOffTime = .5f;
-    [SerializeField] float maxDistance = 10000f;
+    [SerializeField] float maxDistance = 1000f;
     [SerializeField] float fireDelay = 2f;
     public float damage = 10f;
 
