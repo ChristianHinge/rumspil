@@ -9,7 +9,7 @@ public class FieldBoundary : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Enter");
+            Debug.Log("Exiting chunk");
             Rocks.instance.EnterSection(other.transform.position);
         }
 

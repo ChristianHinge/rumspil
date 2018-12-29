@@ -46,7 +46,7 @@ public class Rocks : MonoBehaviour
 
     public void CreateChunk(Vector3 desiredPosition)
     {
-
+        Debug.Log("Creating new chunk");
         Vector3 chunkPosition = ChunkCoordinates(desiredPosition)*chunkSize;
         IntVector3 arrayCoordinates = GetArrayCoordinate(desiredPosition);
         //("Chunk position" + chunkPosition.ToString());
@@ -95,7 +95,9 @@ public class Rocks : MonoBehaviour
     }
     void MoveChunk(Vector3 chunkLocation,GameObject chunk)
     {
+        pooledChunks.RemoveAt(0);
         chunk.transform.position = chunkLocation;
+        activeChunks.Add(chunk);
     
     }
 
@@ -133,7 +135,7 @@ public class Rocks : MonoBehaviour
                     {
                         Debug.Log("Moving chunk");
                         MoveChunk(ChunkCoordinates(TestLocation)*chunkSize, pooledChunks[0]);
-                        pooledChunks.RemoveAt(0);
+                        
                     }
                     else
                         CreateChunk(TestLocation);
