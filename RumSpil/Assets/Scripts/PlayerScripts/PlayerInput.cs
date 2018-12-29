@@ -5,19 +5,28 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] Laser[] laser;
+    [SerializeField] Missile[] missile;
 
     private void Update()
-    {        
-        if(Input.GetKey(KeyCode.Space))
+    {
+        if (Input.GetKey(KeyCode.Space))
         {
-            foreach (Laser l in laser)
+            if(WeaponSwitching.instance.selectedWeapon == 0)
             {
-               // Vector3 pos = transform.position + (transform.forward * l.Distance);
-                l.FireLaser();
+                foreach (Laser l in laser)
+                {
+                    // Vector3 pos = transform.position + (transform.forward * l.Distance);
+                    l.FireLaser();
+                }
             }
-
+            else if (WeaponSwitching.instance.selectedWeapon == 1)
+            {
+                foreach(Missile m in missile)
+                {
+                    m.FireMissile();
+                }
+            }
         }
 
     }
 }
-    
